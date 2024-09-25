@@ -1,0 +1,138 @@
+/* Container styling */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Smooth fade-in for the whole page */
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none; /* Initially hidden, will be shown on errors */
+  }
+  
+  .add-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transitions */
+  }
+  
+  .add-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Traffic poles container */
+  .poles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .traffic-pole {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; /* Fade-in for each pole */
+  }
+  
+  .traffic-pole:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Lift on hover */
+  }
+  
+  /* Heading style for pole IDs */
+  .traffic-pole h3 {
+    color: #333;
+    font-size: 18px;
+  }
+  
+  /* Button group */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  /* Signal buttons */
+  .signal-button {
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  .signal-button.red {
+    background-color: #f44336; /* Red */
+  }
+  
+  .signal-button.red:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }
+  
+  .signal-button.yellow {
+    background-color: #ffeb3b; /* Yellow */
+    color: black;
+  }
+  
+  .signal-button.yellow:hover {
+    background-color: #fdd835; /* Darker yellow on hover */
+  }
+  
+  .signal-button.green {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  .signal-button.green:hover {
+    background-color: #388e3c; /* Darker green on hover */
+  }
+  
+  /* Spinner for loading */
+  .spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none; /* Hidden by default */
+  }
+  
+  /* Keyframes for animations */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  

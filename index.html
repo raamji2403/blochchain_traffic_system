@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light Management</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Traffic Light Management</h1>
+        <p id="error-message" class="error"></p> <!-- Error message display -->
+        <button class="add-button" onclick="addPole()">Add Traffic Pole</button>
+        <div id="poles-container" class="poles-container"></div> <!-- Poles container with class for styling -->
+    </div>
+
+    <script>
+        async function fetchPoles() {
+            try {
+                const response = await fetch('/get_poles');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch poles');
+                }
+                const poles = await response.json();
+                const container = document.getElementById('poles-container');
+                container.innerHTML = ''; // Clear the container
+
+                poles.forEach(pole => {
+                    const poleDiv = document.createElement('div');
+                    poleDiv.className = 'traffic-pole'; // Apply traffic pole styling
+                    poleDiv.innerHTML = `
+                        <h3>Pole ID: ${pole.id}</h3>
+                        <p>Signal: ${pole.signal}</p>
+                        <p>Last Updated: ${new Date(pole.last_updated * 1000).toLocaleString()}</p> <!-- Format last updated time -->
+                        <div class="button-group">
+                            <button class="signal-button red" onclick="changeSignal(${pole.id}, 'Red')">Red</button>
+                            <button class="signal-button yellow" onclick="changeSignal(${pole.id}, 'Yellow')">Yellow</button>
+                            <button class="signal-button green" onclick="changeSignal(${pole.id}, 'Green')">Green</button>
+                        </div>
+                    `;
+                    container.appendChild(poleDiv);
+                });
+            } catch (error) {
+                document.getElementById('error-message').innerText = error.message; // Display error messages
+            }
+        }
+
+        async function addPole() {
+            try {
+                const response = await fetch('/add_pole', { method: 'POST' });
+                if (!response.ok) {
+                    throw new Error('Failed to add pole');
+                }
+                fetchPoles(); // Refresh poles after adding
+            } catch (error) {
+                document.getElementById('error-message').innerText = error.message; // Display error messages
+            }
+        }
+
+        async function changeSignal(pole_id, signal) {
+            try {
+                const response = await fetch('/change_signal', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ pole_id, signal })
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to change signal');
+                }
+                fetchPoles(); // Refresh poles after changing signal
+            } catch (error) {
+                document.getElementById('error-message').innerText = error.message; // Display error messages
+            }
+        }
+
+        fetchPoles(); // Load poles on page load
+    </script>
+</body>
+</html>
