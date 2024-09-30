@@ -7,13 +7,19 @@ This project tracks the change of traffic signal of each pole in blockchain usin
 
 ## Repository Structure
 blockchain_traffic_system/<br>
-├── build/contracts 
-&nbsp;&nbsp;&nbsp;&nbsp; Traffic.json<br>
-├── contracts : Traffic.sol<br>
-├── migrations : 2_deploy_contract.js<br>
-├── static : style.css<br>
-├── templates : index.html<br>
+├── build/contracts<br>
+&nbsp;&nbsp;&nbsp;&nbsp; ├── Traffic.json<br>
+├── contracts<br>
+&nbsp;&nbsp;&nbsp;&nbsp; ├── Traffic.sol<br>
+├── migrations<br>
+&nbsp;&nbsp;&nbsp;&nbsp; ├── 2deploy_contract.js<br>
+├── static<br>
+&nbsp;&nbsp;&nbsp;&nbsp; ├── style.css<br>
+├── templates<br>
+&nbsp;&nbsp;&nbsp;&nbsp; ├── index.html<br>
 ├── app.py<br>
+├── compiled_contract.json<br>
+├── truffle-config.js
 
 ## Contributing
 Contributions are welcome! Please feel free to open issues or pull requests for any improvements or features.
