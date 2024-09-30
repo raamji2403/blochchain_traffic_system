@@ -33,7 +33,7 @@ blockchain_traffic_system/<br>
   5. Put the Traffic.sol in /contracts directory and 2deploy_contract.js in /migrations directory.<br>
   6. To compile the contract run
      ```bash
-       truffle complie
+       truffle compile
      ```
   7. After that , /build/contracts/Traffic.json will be created and copy that to compiled_contract.json.
      
