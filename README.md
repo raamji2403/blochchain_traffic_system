@@ -7,7 +7,7 @@ This project tracks the change of traffic signal of each pole in blockchain usin
 
 ## Repository Structure
 blockchain_traffic_system/<br>
-├── build/contracts<br>
+├── build/contracts
   ├── Traffic.json<br>
 ├── contracts<br>
   ├── Traffic.sol<br>
