@@ -4,6 +4,7 @@ This project tracks the change of traffic signal of each pole in blockchain usin
 
 ## Table of Contents
 - [Repository Structure](#repository-structure)
+- [Truffle Set-up](#truffle-set-up)
 
 ## Repository Structure
 blockchain_traffic_system/<br>
@@ -21,5 +22,20 @@ blockchain_traffic_system/<br>
 ├── compiled_contract.json<br>
 ├── truffle-config.js
 
+## Truffle Set-Up
+  1. Open terminal to blockchain_traffic_system directory.<br>
+  2. Run the command to initialize truffle
+     ```bash
+       truffle init
+     ```
+  3. After that ,[ truffle_config.js  , /contracts , /migrations , /tests] 3 directories  and 1 folder will be created.<<br>
+  4. In truffle-config.js , un-command the deployment part and change the port to 7545 where Ganache blockchain runs in background.<br>
+  5. Put the Traffic.sol in /contracts directory and 2deploy_contract.js in /migrations directory.<br>
+  6. To compile the contract run
+     ```bash
+       truffle complie
+     ```
+  7. After that , /build/contracts/Traffic.json will be created and copy that to compiled_contract.json.
+     
 ## Contributing
 Contributions are welcome! Please feel free to open issues or pull requests for any improvements or features.
