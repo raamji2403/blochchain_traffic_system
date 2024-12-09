@@ -29,7 +29,7 @@ blockchain_traffic_system/<br>
      ```bash
        truffle init
      ```
-  3. After that ,[ truffle_config.js  , /contracts , /migrations , /tests] 3 folder  and 1 file will be created.<<br>
+  3. After that ,[ truffle_config.js  , /contracts , /migrations , /tests] 3 folder  and 1 file will be generated.<br>
   4. In truffle-config.js , un-command the deployment part and change the port to 7545 where Ganache blockchain runs in background.<br>
   5. Put the Traffic.sol in /contracts directory and 2deploy_contract.js in /migrations directory.<br>
   6. To compile the contract run
