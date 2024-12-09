@@ -6,7 +6,7 @@ This project tracks the change of traffic signal of each pole in blockchain usin
 - [Repository Structure](#repository-structure)
 - [Truffle Set-up](#truffle-set-up)
 - [Ganache Set-up](#ganache-set-up)
-
+- [Final Set-up](#final-set-up)
 ## Repository Structure
 blockchain_traffic_system/<br>
 ├── build/contracts<br>
@@ -45,6 +45,17 @@ blockchain_traffic_system/<br>
 4. Click "ADD PROJECT"(bottom-left) and select the "truffle-config.js" file.
 5. Go to "ACCOUNT & KEYS" section and give "ACCOUNT DEFAULT BALANCE" and "TOTAL ACCOUNTS TO GENERATE".
 6. Click "START" button on the top-right.
+7. Run the command in terminal to deploy contract
+     ```bash
+       truffle migrate
+     ```
+## Final Set-Up
+1. After deployment of contract, copy the contract address and add it in  app.py .
+2.  Open VS Code in terminal to blockchain_traffic_system and run
+     ```bash
+       python app.py
+     ```
+3. Click the local or network URL to interact with UI.
    
 ## Contributing
 Contributions are welcome! Please feel free to open issues or pull requests for any improvements or features.
