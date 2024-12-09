@@ -8,7 +8,7 @@ This project tracks the change of traffic signal of each pole in blockchain usin
 - [Ganache Set-up](#ganache-set-up)
 - [Final Set-up](#final-set-up)
 
-### Note : Before initializing truffle make the systems execution policy is Remoted-Signed.
+### Note : Before initializing truffle make sure the system's execution policy is Remoted-Signed.
 ## Repository Structure
 blockchain_traffic_system/<br>
 ├── build/contracts<br>
